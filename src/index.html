@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- build:remove -->
+  <base href="/">
+  <!-- endbuild -->
+  <!-- inject:baseUrl --><!-- endinject -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <title>Eleven guide</title>
+  <!-- build:css(.tmp) styles/main.min.css -->
+  <!-- TODO: (martin) the bootstrap.css & font awesome should be load in vendor.js but how I make sure that vendor css files are loaded before main.css as vendor css files are load through JS -->
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="../jspm_packages/github/angular/bower-material@1.1.1/angular-material.css"/>
+
+  <link rel="stylesheet" href="styles/main.css"/>
+  <!-- endbuild -->
+
+</head>
+<body>
+  <!--[if lt IE 10]>
+  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- build:js(.) scripts/main.min.js -->
+  <!-- inject:build:js --><!-- endinject -->
+  <!-- endbuild -->
+
+  <!-- build:remove -->
+  <script src="jspm_packages/system.js"></script>
+  <script src="jspm.conf.js"></script>
+  <script>
+    System.import('app/app').catch(console.error.bind(console)); // make sure any errors are print to console
+  </script>
+  <!-- endbuild -->
+
+</body>
+</html>
