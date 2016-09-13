@@ -7,22 +7,26 @@
 
 // js vendor files
 import angular from 'angular';
-
 import 'angular-animate';
-import 'angular-sanitize';
-import 'angular-messages';
-
 import 'angular-aria';
 import 'angular-material';
+import 'angular-messages';
+import 'angular-ui-router';
 
 // css vendor files
 
 // js app files
+import './core/core';
+import './directives/directives';
+import './components/components';
+import './routes/routes';
+import AppController from './app.controller';
 import mainModule from './ng-decorators';
 
 
 angular.element(document).ready(function() {
-   angular.bootstrap(document, [mainModule.name], {
-     strictDi: true
-   });
+    mainModule.controller('AppController', AppController);
+    angular.bootstrap(document, [mainModule.name], {
+        strictDi: true
+    });
 });

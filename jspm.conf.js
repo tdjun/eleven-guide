@@ -4,9 +4,9 @@ System.config({
   transpiler: "babel",
   babelOptions: {
     "optional": [
-      "runtime",
-      "optimisation.modules.system"
-    ]
+      "runtime"
+    ],
+    "stage": 1
   },
   paths: {
     "github:*": "jspm_packages/github/*",
@@ -21,7 +21,7 @@ System.config({
     "angular-material": "github:angular/bower-material@1.1.1",
     "angular-messages": "github:angular/bower-angular-messages@1.5.8",
     "angular-mocks": "npm:angular-mocks@1.5.8",
-    "angular-sanitize": "npm:angular-sanitize@1.5.8",
+    "angular-ui-router": "npm:angular-ui-router@0.3.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@2.4.1",
@@ -60,6 +60,10 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "npm:angular-ui-router@0.3.1": {
+      "angular": "npm:angular@1.5.8",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:assert@1.4.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

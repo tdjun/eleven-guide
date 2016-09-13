@@ -7,6 +7,7 @@
 ### 참고프로젝트
 * https://github.com/angular/material-start
 * https://github.com/martinmicunda/employee-scheduling-ui
+	* http://martinmicunda.com/2015/02/09/how-to-start-writing-apps-with-es6-angular-1x-and-jspm/
 * http://fountainjs.io/download/
 
 
@@ -14,6 +15,7 @@
 ### 목표
 1. 참고 프로젝트의 하나로 섞음.
 2. https://material.angularjs.org 의 데모 및 기능을 모두 가져온다.
+3. 인증/권한에 따른 화면 접근제한.
 
 
 ### 설명
@@ -53,8 +55,11 @@ $ jspm install angular-messages=github:angular/bower-angular-messages
 $ jspm install css=github:systemjs/plugin-css
 $ jspm install json=github:systemjs/plugin-json
 $ jspm install text=github:systemjs/plugin-text
-$ jspm install roboto-fontface
-$ jspm install npm:angular-sanitize
+$ jspm install npm:angular-messages
+--$ jspm install roboto-fontface
+--$ jspm install npm:angular-sanitize
+--$ jspm install npm:angular-local-storage
+--$ jspm install npm:angular-ui-router
 ```
 * employee-scheduling-ui 파일복사
 	* package.json 수정

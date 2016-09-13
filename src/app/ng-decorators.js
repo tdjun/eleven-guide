@@ -11,9 +11,10 @@ const app = angular.module('ngDecorator', [
     // angular modules
     'ngAnimate',
     'ngMessages',
-    'ngSanitize',
 
     // 3rd party modules
+    'ngMaterial',
+    'ui.router',
 ]);
 
 function Run() {
@@ -135,4 +136,4 @@ function dashCaseToCamelCase(string) {
 }
 
 export default app;
-export {Component, View, RouteConfig, Inject, Run, Config, Service, Filter, Directive};
+export {Component, View, Inject, Run, Config, Service, Filter, Directive, RouteConfig};

@@ -1,0 +1,20 @@
+<md-button
+    class="md-button-toggle"
+    ng-click="vm.toggle()"
+    aria-controls="docs-menu-{{vm.section.name | nospace}}"
+    aria-expanded="{{vm.isOpen()}}">
+    <div flex layout="row">
+        {{vm.section.name}}
+        <span flex></span>
+        <span aria-hidden="true" class="md-toggle-icon"
+              ng-class="{'toggled' : vm.isOpen()}">
+                    <md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+                </span>
+    </div>
+    <span class="md-visually-hidden">Toggle {{vm.isOpen()? 'expanded' : 'collapsed'}}</span>
+</md-button>
+<ul id="docs-menu-{{vm.section.name | nospace}}" class="menu-toggle-list" >
+    <li ng-repeat="page in vm.section.pages">
+        <menu-link section="page" on-click="vm.selectSubPage(page)"></menu-link>
+    </li>
+</ul>

@@ -1,42 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr" ng-controller="AppController as app">
 <head>
-  <!-- build:remove -->
-  <base href="/">
-  <!-- endbuild -->
-  <!-- inject:baseUrl --><!-- endinject -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <!-- build:remove -->
+    <base href="/">
+    <!-- endbuild -->
+    <!-- inject:baseUrl --><!-- endinject -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Angular Material - Docs</title>
 
-  <title>Eleven guide</title>
-  <!-- build:css(.tmp) styles/main.min.css -->
-  <!-- TODO: (martin) the bootstrap.css & font awesome should be load in vendor.js but how I make sure that vendor css files are loaded before main.css as vendor css files are load through JS -->
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
-  <link rel="stylesheet" href="../jspm_packages/github/angular/bower-material@1.1.1/angular-material.css"/>
+    <!-- build:css(.tmp) styles/main.min.css -->
+    <!-- TODO: (martin) the bootstrap.css & font awesome should be load in vendor.js but how I make sure that vendor css files are loaded before main.css as vendor css files are load through JS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,700"/>
+    <link rel="stylesheet" href="../jspm_packages/github/angular/bower-material@1.1.1/angular-material.css"/>
 
-  <link rel="stylesheet" href="styles/main.css"/>
-  <!-- endbuild -->
+    <link rel="stylesheet" href="styles/main.css"/>
+    <!-- endbuild -->
 
 </head>
-<body>
-  <!--[if lt IE 10]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+<body class="docs-body" layout="row" ng-cloak >
+<!--[if lt IE 10]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
-  <![endif]-->
+<![endif]-->
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left" hide-print
+            md-is-locked-open="$mdMedia('gt-sm')">
 
-  <!-- build:js(.) scripts/main.min.js -->
-  <!-- inject:build:js --><!-- endinject -->
-  <!-- endbuild -->
+    <header class="nav-header">
+        <a ng-href="/" class="docs-logo">
+            <img src="images/icons/angular-logo.svg" alt="" />
+            <h1 class="docs-logotype md-heading">Angular Material</h1>
+        </a>
+    </header>
 
-  <!-- build:remove -->
-  <script src="jspm_packages/system.js"></script>
-  <script src="jspm.conf.js"></script>
-  <script>
+    <md-content flex role="navigation">
+        <menu-section></menu-section>
+    </md-content>
+
+</md-sidenav>
+<div layout="column" tabindex="-1" role="main" flex>
+    <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar">
+        <div class="md-toolbar-tools docs-toolbar-tools" tabindex="-1">
+            <md-button class="md-icon-button" ng-click="app.openMenu()" hide-gt-sm aria-label="Toggle Menu">
+                <md-icon md-svg-src="images/icons/ic_menu_24px.svg"></md-icon>
+            </md-button>
+            <div layout="row" flex class="fill-height">
+                <h2 class="md-toolbar-item md-breadcrumb md-headline">
+
+                </h2>
+            </div>
+        </div>
+    </md-toolbar>
+</div>
+
+
+<!-- build:js(.) scripts/main.min.js -->
+<!-- inject:build:js --><!-- endinject -->
+<!-- endbuild -->
+
+<!-- build:remove -->
+<script src="jspm_packages/system.js"></script>
+<script src="jspm.conf.js"></script>
+<script>
     System.import('app/app').catch(console.error.bind(console)); // make sure any errors are print to console
-  </script>
-  <!-- endbuild -->
+</script>
+<!-- endbuild -->
 
 </body>
 </html>

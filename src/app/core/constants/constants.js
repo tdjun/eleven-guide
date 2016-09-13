@@ -6,15 +6,117 @@
 'use strict';
 
 export const AVAILABILITY_DATE_FORMAT = 'YYYYMMDD';
-export const EMPLOYEE_PROFILE_STATUSES = Object.freeze({ACTIVE: 'active', INACTIVE: 'inactive', PENDING: 'pending'});
-export const USER_ROLES = Object.freeze({EMPLOYEE: 'employee', SUPERVISOR: 'supervisor', MANAGER: 'manager', ADMIN: 'admin'});
-export const ACCESS_LEVELS = Object.freeze({
-    public: ['*'],
-    employee: [USER_ROLES.EMPLOYEE, USER_ROLES.SUPERVISOR, USER_ROLES.MANAGER, USER_ROLES.ADMIN],
-    supervisor: [USER_ROLES.SUPERVISOR, USER_ROLES.MANAGER, USER_ROLES.ADMIN],
-    manager: [USER_ROLES.MANAGER, USER_ROLES.ADMIN],
-    admin: [USER_ROLES.ADMIN]
-});
 // http://labs.qandidate.com/blog/2014/10/16/using-the-accept-header-to-version-your-api/
 export const HEADER_API_VERSION = 'application/json'; //'application/vnd.employee-scheduling.api+json;version=1;charset=utf-8'; // application/vnd.employee-scheduling.v1+json
-export const PROFILE_COMPLETENESS_TYPES = Object.freeze({ACCOUNT: 'account', EMPLOYEE: 'employee'});
+
+export const SECTIONS = [
+    {
+        name: 'Documentation Version',
+        type: 'heading'
+    },
+    {
+        name: 'Getting Started',
+        type: 'link'
+    },
+    {
+        name: 'Contributors',
+        type: 'link'
+    },
+    {
+        name: 'Customization',
+        type: 'heading',
+        children: [
+            {
+                name: 'CSS',
+                type: 'toggle',
+                pages: [{
+                    name: 'Typography',
+                    url: 'CSS/typography',
+                    type: 'link'
+                },
+                    {
+                        name : 'Button',
+                        url: 'CSS/button',
+                        type: 'link'
+                    },
+                    {
+                        name : 'Checkbox',
+                        url: 'CSS/checkbox',
+                        type: 'link'
+                    }]
+            },
+            {
+                name: 'Theming',
+                type: 'toggle',
+                pages: [
+                    {
+                        name: 'Introduction and Terms',
+                        url: 'Theming/01_introduction',
+                        type: 'link'
+                    },
+                    {
+                        name: 'Declarative Syntax',
+                        url: 'Theming/02_declarative_syntax',
+                        type: 'link'
+                    },
+                    {
+                        name: 'Configuring a Theme',
+                        url: 'Theming/03_configuring_a_theme',
+                        type: 'link'
+                    },
+                    {
+                        name: 'Multiple Themes',
+                        url: 'Theming/04_multiple_themes',
+                        type: 'link'
+                    },
+                    {
+                        name: 'Under the Hood',
+                        url: 'Theming/05_under_the_hood',
+                        type: 'link'
+                    },
+                    {
+                        name: 'Browser Color',
+                        url: 'Theming/06_browser_color',
+                        type: 'link'
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        name: 'API Reference',
+        type: 'heading',
+        children: [
+            {
+                name: 'Layout',
+                type: 'toggle',
+                pages: [
+                    {
+                        name: 'Introduction',
+                        id: 'layoutIntro',
+                        url: 'layout/introduction'
+                    }, {
+                        name: 'Layout Containers',
+                        id: 'layoutContainers',
+                        url: 'layout/container'
+                    }, {
+                        name: 'Layout Children',
+                        id: 'layoutGrid',
+                        url: 'layout/children'
+                    }, {
+                        name: 'Child Alignment',
+                        id: 'layoutAlign',
+                        url: 'layout/alignment'
+                    }, {
+                        name: 'Extra Options',
+                        id: 'layoutOptions',
+                        url: 'layout/options'
+                    }, {
+                        name: 'Troubleshooting',
+                        id: 'layoutTips',
+                        url: 'layout/tips'
+                    }]
+            }
+        ]
+    }
+];
