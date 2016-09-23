@@ -28,9 +28,7 @@ import {View, Component} from '../../ng-decorators'; // jshint unused: false
 })
 //end-non-standard
 class menuLink {
-    constructor() {
-
-    }
+    constructor() {}
 
     isSelected() {
         return this.section.select;

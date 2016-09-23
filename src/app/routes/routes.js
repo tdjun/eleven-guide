@@ -5,3 +5,5 @@
  */
 'use strict';
 
+import './pages/pages';
+import './layout-layout/layout-layout';

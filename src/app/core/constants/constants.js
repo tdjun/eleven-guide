@@ -19,10 +19,6 @@ export const SECTIONS = [
         type: 'link'
     },
     {
-        name: 'Contributors',
-        type: 'link'
-    },
-    {
         name: 'Customization',
         type: 'heading',
         children: [
@@ -118,5 +114,15 @@ export const SECTIONS = [
                     }]
             }
         ]
+    },
+    {
+        name: 'Contributors',
+        type: 'link'
+    },
+    {
+        name: 'License',
+        type: 'link',
+        url: 'license',
+        hidden: true
     }
 ];

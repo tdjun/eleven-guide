@@ -25,22 +25,21 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
+
 <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
             md-component-id="left" hide-print
             md-is-locked-open="$mdMedia('gt-sm')">
-
     <header class="nav-header">
         <a ng-href="/" class="docs-logo">
             <img src="images/icons/angular-logo.svg" alt="" />
             <h1 class="docs-logotype md-heading">Angular Material</h1>
         </a>
     </header>
-
     <md-content flex role="navigation">
-        <menu-section></menu-section>
+        <menu-section on-change="app.selectPage(section, page)"></menu-section>
     </md-content>
-
 </md-sidenav>
+
 <div layout="column" tabindex="-1" role="main" flex>
     <md-toolbar class="md-whiteframe-glow-z1 site-content-toolbar">
         <div class="md-toolbar-tools docs-toolbar-tools" tabindex="-1">
@@ -49,11 +48,33 @@
             </md-button>
             <div layout="row" flex class="fill-height">
                 <h2 class="md-toolbar-item md-breadcrumb md-headline">
-
+                    <span ng-if="app.currentPage === null">
+                        <span hide-sm hide-md>{{app.currentSection.name}}</span>
+                        <span class="docs-menu-separator-icon" hide-sm hide-md style="transform: translate3d(0, 1px, 0)">
+                            <span class="md-visually-hidden">-</span>
+                            <md-icon
+                                aria-hidden="true"
+                                md-svg-src="images/icons/ic_chevron_right_24px.svg"
+                                style="margin-top: -2px"></md-icon>
+                        </span>
+                    </span>
+                    <span class="md-breadcrumb-page">{{app.currentPage.name}}</span>
                 </h2>
+                <span flex></span> <!-- use up the empty space -->
             </div>
         </div>
     </md-toolbar>
+    <md-content md-scroll-y layout="column" flex>
+        <div ui-view layout-padding flex="noshrink" class="docs-ng-view"></div>
+        <div layout="row" flex="noshrink" layout-align="center center">
+            <div id="license-footer" flex>
+                Powered by Google &copy;2014&#8211;{{thisYear}}.
+                Code licensed under the <a ng-href="./license"  class="md-accent">MIT License</a>.
+                Documentation licensed under
+                <a href="http://creativecommons.org/licenses/by/4.0/"  target="_blank" class="md-default-theme md-accent">CC BY 4.0</a>.
+            </div>
+        </div>
+    </md-content>
 </div>
 
 

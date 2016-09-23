@@ -13,7 +13,7 @@ class OnConfig {
     @Config()
     @Inject('$urlRouterProvider')
     //end-non-standard
-    static configFactory($urlRouterProvider, $mdSidenav) {
+    static configFactory($urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
     }
 }
@@ -24,25 +24,26 @@ class OnRun {
     @Inject('$rootScope', '$log')
     //end-non-standard
     static runFactory($rootScope, $log) {
+        console.log('runFactory', $rootScope);
         $rootScope.$on('$stateChangeStart', (event, toState) => {
+            console.log('$stateChangeStart');
             if (toState.resolve) {
                 $rootScope.isLoading = true;
             }
-            console.log('$stateChangeStart', $rootScope.isLoading);
         });
 
         $rootScope.$on('$stateChangeSuccess', (event, toState) => {
+            console.log('$stateChangeSuccess');
             if (toState.resolve) {
                 $rootScope.isLoading = false;
             }
-            console.log('$stateChangeSuccess', $rootScope.isLoading);
         });
 
         $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
+            console.log('$stateChangeError');
             if (toState.resolve) {
                 $rootScope.isLoading = false;
             }
-            console.log('$stateChangeError', $rootScope.isLoading);
             event.preventDefault();
         });
 

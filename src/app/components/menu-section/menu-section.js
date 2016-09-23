@@ -37,7 +37,10 @@ import {View, Component} from '../../ng-decorators'; // jshint unused: false
             </ul>
         </li>
     </ul>
-    `
+    `,
+    bindToController: {
+        onChange: '&'
+    }
 })
 //end-non-standard
 class menuSection {
@@ -72,7 +75,8 @@ class menuSection {
         }
         page.select = true;
         this.currentPage = page;
-        this.currentSection = section;
+
+        this.onChange({section: section, page: page});
     }
 
     isPageSelected(page) {

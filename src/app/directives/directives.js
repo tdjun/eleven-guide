@@ -4,3 +4,5 @@
  * @license   GPL-3.0
  */
 'use strict';
+
+import './highlight-js/hljs';
