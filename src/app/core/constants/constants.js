@@ -8,7 +8,13 @@
 export const AVAILABILITY_DATE_FORMAT = 'YYYYMMDD';
 // http://labs.qandidate.com/blog/2014/10/16/using-the-accept-header-to-version-your-api/
 export const HEADER_API_VERSION = 'application/json'; //'application/vnd.employee-scheduling.api+json;version=1;charset=utf-8'; // application/vnd.employee-scheduling.v1+json
-
+export const BUILDCONFIG = {
+    'ngVersion': '1.5.5',
+    'version': '1.1.1',
+    'repository': 'https://github.com/angular/material',
+    'commit': '1f14cc43c4dd9b66252c94e7bd40314bc018a995',
+    'date': '2016-09-08 19:35:37 -0700'
+};
 export const SECTIONS = [
     {
         name: 'Documentation Version',

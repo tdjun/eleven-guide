@@ -5,4 +5,6 @@
  */
 'use strict';
 
+import './demo-file/demo-file';
+import './demo-include/demo-include';
 import './highlight-js/hljs';

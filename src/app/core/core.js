@@ -28,3 +28,6 @@ import './interceptors/http-retry';
 // also add code to abstract resource where I initilize version of endpoint as I can have different version for each endpoint e.g. microservices styles. The default should be v1 and extends class should have option overwrite version number e.g. v2
 
 // services
+import './services/codepen';
+import './services/codepen-data-adapter';
+import './services/demo-angular-scripts';

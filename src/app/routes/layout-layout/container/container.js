@@ -16,4 +16,9 @@ import {RouteConfig, Component, View} from '../../../ng-decorators'; // jshint u
     template: template
 })
 //end-non-standard
-class Container {}
+class Container {
+    constructor() {
+    }
+}
+
+export default Container;

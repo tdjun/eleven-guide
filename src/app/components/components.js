@@ -5,6 +5,7 @@
  */
 'use strict';
 
+import './docs-demo/docs-demo';
 import './menu-section/menu-section';
 import './menu-link/menu-link';
 import './menu-toggle/menu-toggle';
