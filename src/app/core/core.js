@@ -11,6 +11,7 @@ import './config/config.route';
 
 // helpers
 import './helpers/nospace';
+import './helpers/tohtml';
 
 // interceptors
 import './interceptors/http-api-url';

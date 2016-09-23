@@ -2,6 +2,7 @@
 'use strict';
 
 import './introduction/introduction';
+import './container/container';
 import {RouteConfig} from '../../ng-decorators';  // jshint unused: false
 
 //container

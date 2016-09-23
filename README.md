@@ -60,6 +60,7 @@ $ jspm install npm:angular-messages
 --$ jspm install npm:angular-sanitize
 --$ jspm install npm:angular-local-storage
 --$ jspm install npm:angular-ui-router
+
 ```
 * employee-scheduling-ui 파일복사
 	* package.json 수정
@@ -78,3 +79,8 @@ $ jspm install npm:angular-messages
 * package.json baseURL: "./" 수정
 
 * npm build
+
+* ~~highlightjs 디랙티브 추가~~
+```
+$ jspm install highlightjs=github:components/highlightjs
+```

@@ -201,7 +201,7 @@
         <tr>
             <td>layout-gt-lg</td>
             <td>flex-gt-lg</td>
-            <td>width &gt;= <b>1920/b>px</td>
+            <td>width &gt;= <b>1920</b>px</td>
         </tr>
         <tr>
             <td>layout-xl</td>
@@ -215,16 +215,15 @@
     <hljs lang=html>
         <div layout='column' class=zero>
 
-            <div flex=33 flex-md={{ vm.box1Width }} class=one></div>
-            <div flex=33 layout={{ vm.direction }} layout-md=row class=two>
+            <div flex="33" flex-md="{{ vm.box1Width }}" class="one"></div>
+            <div flex="33" layout="{{ vm.direction }}" layout-md="row" class="two">
 
-                <div flex=20 flex-md=10 hide-lg class=two_one></div>
-                <div flex=30px show hide-md={{ vm.hideBox }} flex-md=25 class=two_two></div>
-                <div flex=20 flex-md=65 class=two_three></div>
+                <div flex="20" flex-md="10" hide-lg class="two_one"></div>
+                <div flex="30px" show hide-md="{{ vm.hideBox }}" flex-md="25" class="two_two"></div>
+                <div flex="20" flex-md="65" class="two_three"></div>
 
             </div>
-            <div flex class=three></div>
-
+            <div flex class="three"></div>
         </div>
     </hljs>
 
@@ -264,22 +263,17 @@
         Let's see how this directive-to-className transformation works. Consider the simple use of the <code>layout</code> and <code>flex</code> directives (API):
     </p>
 
-    <hljs lang=html>
+    <hljs lang="html">
         <div>
-
-            <div layout=row>
-
+            <div layout="row">
                 <div flex>First item in row</div>
-                <div flex=20>Second item in row</div>
+                <div flex="20">Second item in row</div>
 
             </div>
-            <div layout=column>
-
-                <div flex=66>First item in column</div>
-                <div flex=33>Second item in column</div>
-
+            <div layout="column">
+                <div flex="66">First item in column</div>
+                <div flex="33">Second item in column</div>
             </div>
-
         </div>
     </hljs>
 
@@ -288,22 +282,16 @@
         At runtime, these attributes are transformed to CSS classes.
     </p>
 
-    <hljs lang=html>
+    <hljs lang="html">
         <div>
-
-            <div class=ng-scope layout-row>
-
-                <div class=flex>First item in row</div>
-                <div class=flex-20>Second item in row</div>
-
+            <div class="ng-scope" layout-row>
+                <div class="flex">First item in row</div>
+                <div class="flex-20">Second item in row</div>
             </div>
-            <div class=ng-scope layout-column>
-
-                <div class=flex-33>First item in column</div>
-                <div class=flex-66>Second item in column</div>
-
+            <div class="ng-scope" layout-column>
+                <div class="flex-33">First item in column</div>
+                <div class="flex-66">Second item in column</div>
             </div>
-
         </div>
     </hljs>
 
@@ -312,55 +300,54 @@
     </p>
 
     <hljs lang=css>
-
         .flex {
-        -webkit-flex: 1 1 0%;
-        -ms-flex: 1 1 0%;
-        flex: 1 1 0%;
-        box-sizing: border-box;
+            -webkit-flex: 1 1 0%;
+            -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
+            box-sizing: border-box;
         }
         .flex-20 {
-        -webkit-flex: 1 1 20%;
-        -ms-flex: 1 1 20%;
-        flex: 1 1 20%;
-        max-width: 20%;
-        max-height: 100%;
-        box-sizing: border-box;
+            -webkit-flex: 1 1 20%;
+            -ms-flex: 1 1 20%;
+            flex: 1 1 20%;
+            max-width: 20%;
+            max-height: 100%;
+            box-sizing: border-box;
         }
 
         .layout-row .flex-33 {
-        -webkit-flex: 1 1 calc(100% / 3);
-        -ms-flex: 1 1 calc(100% / 3);
-        flex: 1 1 calc(100% / 3);
-        box-sizing: border-box;
+            -webkit-flex: 1 1 calc(100% / 3);
+            -ms-flex: 1 1 calc(100% / 3);
+            flex: 1 1 calc(100% / 3);
+            box-sizing: border-box;
         }
 
         .layout-row  .flex-66 {
-        -webkit-flex: 1 1 calc(200% / 3);
-        -ms-flex: 1 1 calc(200% / 3);
-        flex: 1 1 calc(200% / 3);
-        box-sizing: border-box;
+            -webkit-flex: 1 1 calc(200% / 3);
+            -ms-flex: 1 1 calc(200% / 3);
+            flex: 1 1 calc(200% / 3);
+            box-sizing: border-box;
         }
 
 
         .layout-row .flex-33 {
-        max-width: calc(100% / 3);
-        max-height: 100%;
+            max-width: calc(100% / 3);
+            max-height: 100%;
         }
 
         .layout-row  .flex-66 {
-        max-width: calc(200% / 3);
-        max-height: 100%;
+            max-width: calc(200% / 3);
+            max-height: 100%;
         }
 
         .layout-column .flex-33 {
-        max-width: 100%;
-        max-height: calc(100% / 3);
+            max-width: 100%;
+            max-height: calc(100% / 3);
         }
 
         .layout-column  .flex-66 {
-        max-width: 100%;
-        max-height: calc(200% / 3);
+            max-width: 100%;
+            max-height: calc(200% / 3);
         }
     </hljs>
 

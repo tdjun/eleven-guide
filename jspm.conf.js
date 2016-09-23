@@ -24,6 +24,7 @@ System.config({
     "angular-ui-router": "npm:angular-ui-router@0.3.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "components/highlightjs": "github:components/highlightjs@9.6.0",
     "core-js": "npm:core-js@2.4.1",
     "css": "github:systemjs/plugin-css@0.1.27",
     "json": "github:systemjs/plugin-json@0.1.2",
